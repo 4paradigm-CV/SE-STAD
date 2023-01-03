@@ -1,0 +1,2 @@
+NCCL_SOCKET_IFNAME=bond0 python -m torch.distributed.launch --nproc_per_node=8 --nnodes=2 --node_rank=1 --master_addr=172.27.128.234 \
+--master_port=8199 tools/ssad_train.py configs/detection/ssad/gt_assign_sf50_dist.py --launcher pytorch --resume-from work_dirs/ssad/semi_gt_match_sf50/iter_8000.pth
